@@ -36,3 +36,6 @@ build/
 # 临时文件
 *.tmp
 *.temp
+
+# 特定目录
+.trae/
