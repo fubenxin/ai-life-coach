@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI生活教练</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header class="header">
+            <h1 class="logo">AI生活教练</h1>
+            <p class="subtitle">您的个人成长伙伴</p>
+        </header>
+
+        <!-- 主聊天区域 -->
+        <main class="chat-container">
+            <!-- 聊天消息展示区域 -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- 系统消息，欢迎用户 -->
+                <div class="message system-message">
+                    <div class="avatar system-avatar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p>您好！我是您的AI生活教练。我可以帮助您解决生活中的困惑，提供成长建议和心理支持。请随时告诉我您想聊的话题，我会认真倾听并提供帮助。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-container">
+                <textarea id="userInput" placeholder="请输入您想聊的话题..." rows="3"></textarea>
+                <button id="sendButton" class="send-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                    发送
+                </button>
+            </div>
+        </main>
+
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <p>&copy; 2024 AI生活教练 | 您的个人成长伙伴</p>
+        </footer>
+    </div>
+
+    <!-- 加载动画 -->
+    <div class="loading-indicator" id="loadingIndicator">
+        <div class="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="js/script.js"></script>
+</body>
+</html>

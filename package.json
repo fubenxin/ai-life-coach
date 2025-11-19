@@ -1,0 +1,21 @@
+{
+  "name": "ai-life-coach",
+  "version": "1.0.0",
+  "description": "一个基于千问大模型API的AI生活教练网站",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "author": "AI生活教练团队",
+  "license": "MIT"
+}
