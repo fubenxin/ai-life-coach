@@ -33,7 +33,7 @@
 
 ### 前置条件
 - 已安装Node.js环境（版本14.x或更高）
-- 已获取千问大模型API密钥（本项目已在server.js中配置）
+- 已获取千问大模型API密钥（需要配置为环境变量）
 
 ### 安装步骤
 1. 克隆或下载项目文件到本地
@@ -42,7 +42,13 @@
    ```
    npm install
    ```
-4. 启动后端服务器：
+4. 配置环境变量：
+   - 复制 `.env.example` 文件并命名为 `.env`
+   - 在 `.env` 文件中填写您的千问大模型API密钥：
+     ```
+     API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+     ```
+5. 启动后端服务器：
    ```
    node server/server.js
    ```
@@ -60,9 +66,31 @@
 
 ### 故障排除
 - 如果API请求失败，请检查网络连接和API密钥是否有效
-- 如果服务器无法启动，请确保端口3000未被占用，或修改server.js中的PORT配置
+- 如果服务器无法启动，请确保环境变量正确配置，尤其是API_KEY
 - 如果前端无法连接到后端，请确认CORS设置是否正确
 - 对于流式输出问题，可以检查浏览器控制台是否有相关错误信息
+
+## Vercel部署指南
+
+### 环境变量配置
+在Vercel平台部署时，需要在项目设置中配置以下环境变量：
+
+1. 登录Vercel账号并进入项目设置
+2. 导航到「Settings > Environment Variables」
+3. 点击「Add New」添加以下环境变量：
+
+| 变量名 | 值 | 说明 |
+|--------|-----|------|
+| API_KEY | sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | 您的千问大模型API密钥（必需） |
+| API_URL | https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions | 千问模型API地址（可选，默认已配置） |
+
+> **重要：** 请确保API_KEY的值不会被公开，Vercel会自动保护这些环境变量
+
+### 部署步骤
+1. 将代码推送到GitHub仓库
+2. 在Vercel中导入您的GitHub仓库
+3. 按照提示完成部署流程
+4. 部署完成后，Vercel会提供一个URL供您访问应用
 
 ## 界面说明
 网站界面采用简洁现代的设计风格，主要包含以下部分：

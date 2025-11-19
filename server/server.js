@@ -1,6 +1,8 @@
 // 导入必要的模块
 const express = require('express');
 const cors = require('cors');
+// 导入dotenv来加载环境变量
+require('dotenv').config();
 // 使用动态导入来处理ES模块版本的node-fetch
 let fetch;
 try {
@@ -22,9 +24,9 @@ app.use(express.json()); // 解析JSON请求体
 // 提供静态文件服务（如果需要）
 app.use(express.static(path.join(__dirname, '../')));
 
-// API密钥配置
-const API_KEY = 'sk-94da00efe70e48a183a3a6927538806b';
-const API_URL = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
+// API配置 - 从环境变量读取
+const API_KEY = process.env.API_KEY;
+const API_URL = process.env.API_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
 
 // 千问模型API调用端点已在下方定义，优化版本支持更好的流式响应处理
 
